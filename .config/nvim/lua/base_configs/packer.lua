@@ -13,13 +13,13 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({ 
-	  'rose-pine/neovim', 
-	  as = 'rose-pine', 
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
+  --use({ 
+--	  'rose-pine/neovim', 
+--	  as = 'rose-pine', 
+--	  config = function()
+--		  vim.cmd('colorscheme rose-pine')
+--	  end
+--  })
 
   use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
   use("nvim-treesitter/playground")
@@ -48,5 +48,24 @@ return require('packer').startup(function(use)
   }
 
   use 'nvim-tree/nvim-web-devicons'
+
+  use 'nvim-lualine/lualine.nvim' -- Statusline
+
+  use 'nyoom-engineering/oxocarbon.nvim'
+
+  -- Lua
+  use {
+	  "folke/trouble.nvim",
+	  requires = "nvim-tree/nvim-web-devicons",
+	  config = function()
+		  require("trouble").setup {
+			  -- your configuration comes here
+			  -- or leave it empty to use the default settings
+			  -- refer to the configuration section below
+		  }
+	  end
+  }
+--  use {'numirias/semshi', ft = 'python', config = 'vim.cmd [[UpdateRemotePlugins]]'}
+
 
 end)
