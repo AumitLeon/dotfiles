@@ -17,6 +17,7 @@ require'lspconfig'.pyright.setup{}
 -- Diagnostic settings, for LSP.
 vim.diagnostic.config({
   virtual_text = false, -- Turn off inline diagnostics
+  underline = false, -- Turn on underlining
 })
 
 -- Use this if you want it to automatically show all diagnostics on the

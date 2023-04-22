@@ -65,7 +65,16 @@ return require('packer').startup(function(use)
 		  }
 	  end
   }
---  use {'numirias/semshi', ft = 'python', config = 'vim.cmd [[UpdateRemotePlugins]]'}
+
+  use {
+	  'nvim-tree/nvim-tree.lua',
+	  requires = {
+		  'nvim-tree/nvim-web-devicons', -- optional
+	  },
+	  config = function()
+		  require("nvim-tree").setup {}
+	  end
+  }
 
 
 end)
